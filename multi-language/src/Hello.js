@@ -1,14 +1,14 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import {Trans} from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
-const Hello = () => {
-  const { t, i18n } = useTranslation()
-
-  return (
-    <div>
-      {t('hello.label')}
-    </div>
-  )
+class Hello extends React.Component {
+  render() {
+    return (
+        <div>
+          <Trans i18nKey='hello.label'/>
+        </div>
+    )
+  }
 }
-
-export default Hello
+export default withTranslation()(Hello);
